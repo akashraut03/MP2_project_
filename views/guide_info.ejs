@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/profile.css">
+  <link rel="stylesheet" href="/css/guide_infromation.css">
+  <style>
+    .img-fluid {
+      max-width: 100%;
+      height: 300px;
+    }
+    strong{
+      font-size: large;
+    }
+    .graybg {
+      margin-bottom: 20px;
+    }
+
+    .tem {
+      width: 60%;
+    }
+
+    .tem2 {
+      height: 100px;
+    }
+
+    .tem3 {
+      margin: 0;
+    }
+    .temp1
+    {
+      width: 50%;
+    }
+    .temp5{
+      display: flex;
+      justify-content: space-around;
+    }
+    .up:hover {
+
+      transform: translateY(-10px);
+      transition: all ease 0.3s;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main-body">
+      <nav>
+        <div class="nav-container">
+          <div class="brand">Travely</div>
+          <div class="responsive-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+        <div class="links">
+          <ul>
+            <%if(user){%>
+              <li><a href="/auth/logout">Logout</a></li>
+              <%}else{%>
+                <li><a href="/auth/login">Sign-in</a></li>
+                <%}%>
+          </ul>
+        </div>
+      </nav>
+      <div class="row gutters-sm">
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center">
+                <% if(guideinfo[0].P_id){%>
+                  <img src="/uploads/<%=guideinfo[0].P_id%>" alt="Profile" width="150" height="150">
+                  <%}else{%>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                      width="150" height="150">
+                    <%}%>
+                      <div class="mt-3">
+                        <h4>
+                          Rating : <%= averagerating %> 
+                        </h4>
+                      </div>
+                      
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3" class="col-sm-9 text-secondary">
+                  <p class="mb-0">Full Name : <%= guideinfo[0].Full_name%>
+                  </p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3" class="col-sm-9 text-secondary">
+                  <p class="mb-0">Email : <%= guideinfo[0].Username%>
+                  </p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3" class="col-sm-9 text-secondary">
+                  <p class="mb-0">Phone : <%= guideinfo[0].Phone_No%>
+                  </p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3" class="col-sm-9 text-secondary">
+                  <p class="mb-0">Address : <%= guideinfo[0].Addrs%>
+                  </p>
+                </div>
+              </div>
+
+              <hr>
+            </div>
+          </div>
+          <hr>
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ 
+  <section id="testimonials">
+    <h4>Local Tourism</h4>
+    
+      <div class="testimonial-heading tem3">
+        <div class="testimonial-box">
+          <div class="box-top">
+            <div class="profile">
+              <div class="name-user">
+                  <% if(image[0].info_local){%>
+                    <strong><%= image[0].info_local %> </strong>
+                    <%}else{%>
+                      <strong>Not yet uploaded any local information</strong>
+                      <%}%>
+              </div>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>
+              
+            </p>
+          </div>
+        </div>
+       
+      </div>
+
+
+
+  </section>
+  <div class="graybg">
+    <div class="container">
+      <div class="row listrecent listrelated">
+        <div class="col-md-4">
+          <div class="card ">
+            <!-- <img class="img-fluid img-thumb up" src="/images/raigad1.png" alt=""> -->
+            <% if(image[0].img_local1){%>
+              <img class="img-fluid img-thumb up" src="/uploads/fort/<%=image[0].img_local1%>" alt="Profile">
+              <%}else{%>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle">
+                <%}%>
+                  <!-- <div class="card-block">
+                <h2 class="card-title">Raigad</h2>
+                <div class="metafooter">
+                  <div class="wrapfooter">
+                    <span class="meta-footer-thumb">
+                    </span>
+                    <span class="author-meta">
+                      <span class="post-date">22 July 2017</span><span class="dot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card ">
+            <% if(image[0].img_local2){%>
+              <img class="img-fluid img-thumb up" src="/uploads/fort/<%=image[0].img_local2%>" alt="Profile">
+              <%}else{%>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle">
+                <%}%>
+                  <!-- <div class="card-block">
+                <h2 class="card-title">Raigad</h2>
+                <div class="metafooter">
+                  <div class="wrapfooter">
+                    <span class="meta-footer-thumb">
+                    </span>
+                    <span class="author-meta">
+                      <span class="post-date">22 July 2017</span><span class="dot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card ">
+            <% if(image[0].img_local3){%>
+              <img class="img-fluid img-thumb up" src="/uploads/fort/<%=image[0].img_local3%>" alt="Profile">
+              <%}else{%>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                  width="150" height="150">
+                <%}%>
+                  <!-- <div class="card-block">
+                <h2 class="card-title">Raigad</h2>
+                <div class="metafooter">
+                  <div class="wrapfooter">
+                    <span class="meta-footer-thumb">
+                    </span>
+                    <span class="author-meta">
+                      <span class="post-date">22 July 2017</span><span class="dot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="testimonials">
+    <h4>Local Product</h4>
+    
+      <div class="testimonial-heading tem3">
+        <div class="testimonial-box">
+          <div class="box-top">
+            <div class="profile">
+              <div class="name-user">
+                <% if(image[0].info_product){%>
+                  <strong><%= image[0].info_product %> </strong>
+                  <%}else{%>
+                    <strong>Not yet uploaded any local product information</strong>
+                    <%}%>
+              </div>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>
+              
+            </p>
+          </div>
+        </div>
+       
+      </div>
+
+
+
+  </section>
+  <div class="graybg">
+    <div class="container">
+      <div class="row listrecent listrelated">
+        <div class="col-md-4">
+          <div class="card ">
+            <!-- <img class="img-fluid img-thumb up" src="/images/raigad1.png" alt=""> -->
+            <% if(image[0].img_product1){%>
+              <img class="img-fluid img-thumb up" src="/uploads/fort/<%=image[0].img_product1%>" alt="Profile">
+              <%}else{%>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle">
+                <%}%>
+                  <!-- <div class="card-block">
+                <h2 class="card-title">Raigad</h2>
+                <div class="metafooter">
+                  <div class="wrapfooter">
+                    <span class="meta-footer-thumb">
+                    </span>
+                    <span class="author-meta">
+                      <span class="post-date">22 July 2017</span><span class="dot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card ">
+            <% if(image[0].img_product2){%>
+              <img class="img-fluid img-thumb up" src="/uploads/fort/<%=image[0].img_product2%>" alt="Profile">
+              <%}else{%>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle">
+                <%}%>
+                  <!-- <div class="card-block">
+                <h2 class="card-title">Raigad</h2>
+                <div class="metafooter">
+                  <div class="wrapfooter">
+                    <span class="meta-footer-thumb">
+                    </span>
+                    <span class="author-meta">
+                      <span class="post-date">22 July 2017</span><span class="dot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card ">
+            <% if(image[0].img_product3){%>
+              <img class="img-fluid img-thumb up" src="/uploads/fort/<%=image[0].img_product3%>" alt="Profile">
+              <%}else{%>
+                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                  width="150" height="150">
+                <%}%>
+                  <!-- <div class="card-block">
+                <h2 class="card-title">Raigad</h2>
+                <div class="metafooter">
+                  <div class="wrapfooter">
+                    <span class="meta-footer-thumb">
+                    </span>
+                    <span class="author-meta">
+                      <span class="post-date">22 July 2017</span><span class="dot"></span>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section id="testimonials">
+    <h4>Reviews</h4>
+    <% if (comment.length) { %>
+      <% for( let i=0; i < comment.length; i++ ) { %>
+        <div class="testimonial-heading tem3">
+          <div class="testimonial-box">
+            <div class="box-top">
+              <div class="profile">
+                <div class="name-user ">
+                  
+                    <div>
+                      Tourist name : <%= comment[i].tourist %>
+                    </div>
+                    <div>
+                     Given rating : <%= comment[i].rating %>
+                    </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="client-comment">
+              <p>
+               Review : <%= comment[i].review %>
+              </p>
+            </div>
+          </div>
+          <% } %>
+    <% } else { %>
+      <div class="testimonial-heading tem3">
+        <div class="testimonial-box">
+          <div class="box-top">
+            <div class="profile">
+              <div class="name-user">
+                <strong>
+                  No any comment yet
+                </strong>
+              </div>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>
+              Not any review yet
+            </p>
+          </div>
+        </div>
+      <% }  %>
+    
+      </div>
+
+
+
+  </section>
+  <div class="d-flex justify-content-center">
+    <div class="temp1">
+      <form method="post" action="/api/touristfilleddata" class="d-flex flex-column align-items-center">
+        <!-- <div> -->
+        <!-- <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label> -->
+    
+        <input type="hidden" name="tourist" value="<%= tourist %>">
+        <input type="hidden" name="touristemail" value="<%= touristemail %>">
+        <input type="hidden" name="guide" value="<%= guideinfo[0].Username %>">
+        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="rating">
+          <option selected>Rating</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+        </select>
+        <!-- </div> -->
+        <div class="form-group tem text-center">
+          <label for="exampleFormControlFile1">Post Your Review After Journey</label>
+          <hr>
+          <textarea class="form-control tem2" id="exampleFormControlTextarea1" rows="10" cols="30" name="review"
+            placeholder="Write Something Here..."></textarea>
+          <hr>
+    
+    
+        </div>
+        <button>SUBMIT</button>
+      </form>
+    </div>
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <div>
+        <strong>Book me on this date</strong> 
+        <hr>
+      </div>
+      <form method="post" action="/api/book" class="d-flex flex-column">
+        <!-- <div> -->
+        <!-- <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label> -->
+    
+        <input type="hidden" name="tourist" value="<%= tourist %>">
+        <input type="hidden" name="touristemail" value="<%= touristemail %>">
+        <input type="hidden" name="touristNo" value="<%= touristNo %>">
+        <input type="hidden" name="touristgender" value="<%= touristgender %>">
+        <input type="hidden" name="guide" value="<%= guideinfo[0].Username %>">
+        <input type="hidden" name="Full_name" value="<%= guideinfo[0].Full_name %>">
+        <input type="hidden" name="Phone_No" value="<%= guideinfo[0].Phone_No %>">
+        <input type="hidden" name="Addrs" value="<%= guideinfo[0].Addrs %>">
+        <input type="hidden" name="fort" value="<%= fort %>">
+        <input type="date" name="date" id="daten">
+       <hr>
+        <button>SUBMIT</button>
+      </form>
+      
+    </div>
+  </div>
+
+  </div>
+
+<script>
+  function setInputDate(_id) {
+                    var _dat = document.querySelector(_id);
+                    var hoy = new Date(),
+                        d = hoy.getDate(),
+                        m = hoy.getMonth() + 1,
+                        y = hoy.getFullYear(),
+                        data;
+
+                    if (d < 10) {
+                        d = "0" + d;
+                    };
+                    if (m < 10) {
+                        m = "0" + m;
+                    };
+
+                    data = y + "-" + m + "-" + d;
+                    console.log(data);
+                    _dat.value = data;
+                };
+
+                setInputDate("#daten");
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/explor.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">
+        <a href="/auth/explore">Explore</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/auth/logout">log-out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="home"></section>
+  <div class="carrdd">
+  <div class="text">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/images/hill-stations.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Hill-station</h5>
+        <p class="card-text">Want go out somewhere alone in the hill station only me , music and peace ?</p>
+        <a href="#" class="btn btn-primary">Your peace with music</a>
+      </div>
+    </div>
+  </div>
+  <div class="text">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/images/beach.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Beach</h5>
+        <p class="card-text">Live in the sunshine, swim the sea, drink the wild air.</p>
+        <a href="/html/beach.html" class="btn btn-primary">Your drink and wild air</a>
+      </div>
+    </div>
+  </div>
+  <div class="text">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/images/fort.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Fort</h5>
+        <p class="card-text">Symbol of courge and warrior.</p>
+        <a href="/sites/fort" class="btn btn-primary">Your warrior's.</a>
+      </div>
+    </div>
+  </div>
+  <div class="text">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/images/hill-stations.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Hill-station</h5>
+        <p class="card-text">Want go out somewhere alone in the hill station only me , music and peace ?</p>
+        <a href="/html/hill.html" class="btn btn-primary">Your peace with music</a>
+      </div>
+    </div>
+  </div>
+  <div class="text">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/images/unesco.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Unesco-sites</h5>
+        <p class="card-text">Unesco sites</p>
+        <a href="/html/unesco.html" class="btn btn-primary">Beuty of ancient India</a>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+    let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if (document.documentElement.scrollTop > 20) {
+        nav.classList.add("sticky");
+      } else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>
+
+</body>
+
+</html>

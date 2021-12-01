@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/flash.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Travel Agency</title>
+</head>
+
+<body>
+  <div class="scrollToTop"><i class="fas fa-chevron-up"></i></div>
+  <div class="container">
+    <nav>
+      <div class="nav-container">
+        <div class="brand">Travely</div>
+        <div class="responsive-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div class="links">
+        <ul>
+          <%if(user){%>
+          <li><a href="/">Home</a></li>
+          <li><a href="/sites/fort">Explore fort</a></li>
+          <li><a href="/user/profile">Profile</a></li>
+          <li><a href="/user/book">Booking</a></li>
+          <li><a href="/auth/logout">Logout</a></li>
+          <%}else{%>
+          <li><a href="/auth/guide_reg">Guide</a></li>
+          <li><a href="/auth/login">Sign-in</a></li>
+          <li><a href="/auth/register">Register</a></li>
+          <%}%>
+            </ul>
+            
+      </div>
+    </nav>
+    <%- include('./layouts/flash-message') %>
+          <section class="starter">
+            <div class="content">
+              <p class="subTitle">Best Destinations around the world</p>
+              <h1 class="title">
+                Travel, <span>enjoy</span> and live a new and full life
+              </h1>
+              <div class="description">
+                Awaken To A Different World.
+              </div>
+            </div>
+          </section>
+          <section class="services">
+            <p class="subtitle">CATEGORY</p>
+            <h2 class="title">We Offer Best Services</h2>
+            <div class="cards">
+              <div class="card">
+                <div class="icon">
+                  <img src="/images/services6.png" alt="" />
+                </div>
+                <h3 class="title">Boating</h3>
+                <p>----------------------</p>
+              </div>
+              <div class="card">
+                <div class="icon">
+                  <img src="/images/services5.png" alt="" />
+                </div>
+                <h3 class="title">Trekking</h3>
+                <p>----------------------</p>
+              </div>
+              <div class="card">
+                <div class="icon">
+                  <img src="/images/services7.png" alt="" />
+                </div>
+                <h3 class="title">Eco-tourism</h3>
+                <p>--------------------</p>
+              </div>
+            </div>
+          </section>
+          <section class="destination">
+            <p class="subtitle">Top Trips</p>
+            <h2 class="title">Top Destinations</h2>
+            <div class="cards">
+              <div class="card">
+                <div class="image">
+                  <img src="/images/destination6.png" alt="" />
+                </div>
+                <div class="content">
+                  <h3>Ajinta caves, Maharashtra</h3>
+                </div>
+                <div class="time">
+                  <i class="fas fa-location-arrow"></i>
+                  <h4>2 Days Trip</h4>
+                </div>
+              </div>
+              <div class="card">
+                <div class="image">
+                  <img src="/images/destination4.png" alt="" />
+                </div>
+                <div class="content">
+                  <h3>Torana fort , Pune</h3>
+                </div>
+                <div class="time">
+                  <i class="fas fa-location-arrow"></i>
+                  <h4>2 Days Trip</h4>
+                </div>
+              </div>
+              <div class="card">
+                <div class="image">
+                  <img src="/images/destination5.png" alt="" />
+                </div>
+                <div class="content">
+                  <h3>Ganputipule , Ratnagiri</h3>
+                </div>
+                <div class="time">
+                  <i class="fas fa-location-arrow"></i>
+                  <h4>2 Days Trip</h4>
+                </div>
+              </div>
+            </div>
+          </section>
+      </div>
+      <!-- <script>
+        console.log(user)
+      </script> -->
+      <script src="https://unpkg.com/scrollreveal"></script>
+      <script src="java script/script.js"></script>
+</body>
+
+</html>

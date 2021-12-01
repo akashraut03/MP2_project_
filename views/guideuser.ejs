@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i"
+    rel="stylesheet">
+  <link href="/css/mediumish.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/profile.css">
+  <title>Document</title>
+  <style>
+    .temp1
+    {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main-body">
+      <nav>
+        <div class="nav-container">
+          <div class="brand">Travely</div>
+          <div class="responsive-toggle">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+        <div class="links">
+          <ul>
+            <%if(user){%>
+              <li><a href="/user/book/guide">Booking</a></li>
+              <li><a href="/user/review">Review</a></li>
+              <li><a href="/auth/logout">Logout</a></li>
+              <%}else{%>
+                <li><a href="/auth/login">Sign-in</a></li>
+                <%}%>
+          </ul>
+        </div>
+      </nav>
+      <div>
+        <div class="col-md-4 mb-3 temp1">
+          <div class="card">
+            <div class="card-body d-flex justify-content-center">
+              <div>
+                <% if(person.P_id){%> 
+                <img src="/uploads/<%=person.P_id%>" alt="Profile" class="rounded-circle"
+                  width="120">
+                  <%}else{%>
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                    width="150">
+                  <%}%>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3" class="col-sm-9 text-secondary">
+                  <h4 class="mb-0">Full Name : <%= person.Full_name %>
+                  </h4>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3" class="col-sm-9 text-secondary">
+                  <h4 class="mb-0">Email: <%= person.Username %>
+                  </h4>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3" class="col-sm-9 text-secondary">
+                    <h4 class="mb-0">Phone: <%= person.Phone_No%>
+                    </h4>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3" class="col-sm-9 text-secondary">
+                      <h4 class="mb-0">Address: <%= person.Addrs %>
+                      </h4>
+                    </div>
+                  </div>
+          
+            
+                </div>
+              </div>
+              <hr>
+              <!-- <div class="row gutters-sm">
+                <div class="col-sm-6 mb-3">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <h4 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2"></i>Travel
+                        Status
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="container">
+          <div class="col-md-8 col-md-offset-2 col-xs-12">
+            <div class="mainheading">
+              <div class="row post-top-meta">
+                <div class="col-md-10">
+                  <span class="post-date">22 July 2017</span><span class="dot">
+                </div>
+              </div>
+              <h1 class="posttitle">Add Info About Your Local Tourism </h1>
+            </div>
+            <div class="article-post">
+              <form method="post" action="/api/upload_img" enctype="multipart/form-data">
+                <div>
+                  <input type="hidden" name="guide_name" value="<%= person.Username %>">
+              </div>
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Add local Area Information in text</label>
+                  <hr>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" cols="50" name="info_local"></textarea>
+                  <hr>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Add local Area Image</label>
+                      <hr>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file' multiple>
+                      <br>
+                      <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+                      <br>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+                      <br>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+                      <br>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+                      <br> -->
+                    </div>
+                  </div>
+                  <hr>
+                  <label for="exampleFormControlTextarea1">About Your Local Product</label>
+                  <hr>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="20" cols="50" name="info_product"></textarea>
+                  <div class="form-group">
+                    <div class="form-group">
+                      <hr>
+                      <label for="exampleFormControlFile1">Add local image</label>
+                      <hr>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file' multiple>
+                      <br>
+                      <!-- <input type="file" class="form-control-file" id="exampleFormControlFile1" name='file'>
+                      <br>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1"  name='file'>
+                      <br>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1"  name='file'>
+                      <br>
+                      <input type="file" class="form-control-file" id="exampleFormControlFile1"  name='file'>
+                      <br> -->
+                      <hr>
+                    </div>
+                  </div>
+                </div>
+                <button>SUBMIT</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

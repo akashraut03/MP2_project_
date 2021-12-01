@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/css/toursist_sign_up.css">
+  <link rel="stylesheet" href="/css/flash.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <%- include('./layouts/flash-message') %>
+      <br>
+      <div class="title">Sign in</div>
+      <form action="/auth/login" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Email/Username</span>
+            <input type="text" placeholder="Enter your email" name="Username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" name="Password" required>
+          </div>
+          <div class="input-box">
+            <p>
+              Don't have an account ? <span><a href="/auth/register">Register</a></span>
+            </p>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="sign in">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+
+</html>

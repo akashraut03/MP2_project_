@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/fort.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <style>
+    .temp{
+      width: 100%;
+      display: block;
+    }
+    .temp2{
+      justify-content: space-evenly;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="scrollToTop"><i class="fas fa-chevron-up"></i></div>
+  <div class="container temp">
+    <nav>
+      <div class="nav-container">
+        <div class="brand">Travely</div>
+        <div class="responsive-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <div class="links">
+        <ul>
+          <%if(user){%>
+            <li><a href="/user/profile">Profile</a></li>
+            <!-- <li><a href="/sites/fort">Explore</a></li> -->
+            <li><a href="/auth/logout">Logout</a></li>
+            <%}else{%>
+              <li><a href="/auth/guide_reg">Guide</a></li>
+              <li><a href="/auth/login">Sign-in</a></li>
+              <li><a href="/auth/register">Register</a></li>
+              <%}%>
+        </ul>
+      </div>
+    </nav>
+    </div>
+  <div class="container temp2" >
+    <!-- <div class="box">
+      <div class="image">
+        <img src="/images/fort.png">
+      </div>
+      <div class="name_job">jaisalmer fort</div>
+      <p> Built in the 12th century by Maharawal Jaisal, a Rajput warrior of
+        the Bhatti clan, the magnificent Jaisalmer Fort rises from a hill in
+        the Thar Desert; it encloses palaces and temples..</p>
+      <div class="btns">
+        <a href="/">
+          <button>Book your trip</button>
+        </a>
+      </div>
+    </div> -->
+    <div class="box">
+      <div class="image">
+        <img src="/images/Raigad fort.png" alt="">
+      </div>
+      <div class="name_job">Raigad</div>
+      <p> Rajgad (literal meaning Ruling Fort) is a hill fort situated in the Pune district of Maharashtra, India.
+      <div class="btns">
+        <a href="/sites/fort/raigad">
+          <button>Book your trip</button>
+        </a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="image">
+        <img src="/images/janjira.png" alt="">
+      </div>
+      <div class="name_job">Janjira</div>
+      <p> Murud-Janjira Fort is situated on an oval-shaped rock off the Arabian Sea coast near the port city of Murud, 165 km (103 mi) south of Mumbai.
+        sailboats from Rajapuri jetty.</p>
+      <div class="btns">
+        <a href="">
+          <button>Book your trip </button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
